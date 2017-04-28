@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "@types/react": "^15.0.22",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
