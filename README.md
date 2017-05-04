@@ -24,13 +24,14 @@ We're going to create a simple to-do list app using React. Begin by opening Visu
 
 We want to modify this project so we can serve the TypeScript files we create! Add the following in web.config file:
 
-xml'''
+```xml
   <system.webServer>
     <staticContent>
       <remove fileExtension=".tsx" />
       <mimeMap fileExtension=".tsx" mimeType="application/javascript" />
     </staticContent>
-  </system.webServer>'''
+  </system.webServer>
+  ```
 
 If you open `app.ts` in the Solution Explorer, you'll find a Greeter component that shows off some of the basic language features. If you hit the green play button, the app should start up and open a page in your browser with a ticking timestamp. Hit Stop when you're done looking at it.
 
