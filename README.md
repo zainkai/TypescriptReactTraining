@@ -284,7 +284,7 @@ toggleCompleted = (index: number) => {
 ```
 - Attach the handler when creating `<li>` elements using the optional second parameter to the `map` callback function:
 ```JSX
-this.state.items.map((item, i) => <li onClick={() => this.toggleCompleted(i)}>{item}</li>)
+this.state.items.map((item, i) => <li onClick={() => this.toggleCompleted(i)}>/* name and check */</li>)
 ```
 
 ## Growing complexity
