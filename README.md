@@ -20,7 +20,7 @@ JavaScript has some problems that can make developing apps in it painful. Quirks
 Using TypeScript, we can develop and modify our apps more productively: when we make a change, we find out sooner if we've broken something somewhere else, and it's easy to tell what functions and variables are available to use in a given context.
 
 ## Setting up your React/TypeScript project
-We're going to create a simple to-do list app using React. Begin by opening Visual Studio and creating a new project. Search for "TypeScript" in the **Search Installed Templates** box and select the **TypeScript HTML app** project type. Name it something like ToDoList and create the project.
+We're going to create a simple to-do list app using React. Begin by opening Visual Studio and creating a new project. Search for "TypeScript" in the **Search Installed Templates** box and select the **HTML Application with TypeScript** project type. Name it something like ToDoList and create the project.
 
 If you open `app.ts` in the Solution Explorer, you'll find a Greeter component that shows off some of the basic language features. If you hit the green play button, the app should start up and open a page in your browser with a ticking timestamp. Hit Stop when you're done looking at it.
 
