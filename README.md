@@ -34,7 +34,8 @@ We're going to use npm (Node Package Manager) to add JavaScript libraries and Ty
 5. Run the following commands:
 
 `npm install --save react react-dom`
-`npm install --saveDev @types/react @types/react-dom`
+
+`npm install --save-dev @types/react @types/react-dom`
 
 Now we have the necessary libraries and type definitions installed, and they're saved as dependencies in `package.json`. If someone grabs this project in the future, they can run just `npm install` and fetch the dependencies specified in `package.json`.
 
