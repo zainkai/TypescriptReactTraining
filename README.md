@@ -20,7 +20,24 @@ JavaScript has some problems that can make developing apps in it painful. Quirks
 Using TypeScript, we can develop and modify our apps more productively: when we make a change, we find out sooner if we've broken something somewhere else, and it's easy to tell what functions and variables are available to use in a given context.
 
 ## Setting up your React/TypeScript project
-We're going to create a simple to-do list app using React. Begin by opening Visual Studio and creating a new project. Search for "TypeScript" in the **Search Installed Templates** box and select the **TypeScript HTML app** project type. Name it something like ToDoList and create the project.
+We're going to create a simple to-do list app using React. Begin by opening Visual Studio and creating a new project. Search for "TypeScript" in the **Search Installed Templates** box and select the **HTML Application with TypeScript** project type. Name it something like ToDoList and create the project.
+
+We want to modify this project so we can serve the TypeScript files we create to the browser! Add the following in your web.config file:
+
+```xml
+<configuration>
+  <system.webServer>
+    <staticContent>
+      <remove fileExtension=".tsx" />
+      <mimeMap fileExtension=".tsx" mimeType="application/javascript" />
+    </staticContent>
+  </system.webServer>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+  </system.web>
+</configuration>
+  ```
 
 If you open `app.ts` in the Solution Explorer, you'll find a Greeter component that shows off some of the basic language features. If you hit the green play button, the app should start up and open a page in your browser with a ticking timestamp. Hit Stop when you're done looking at it.
 
@@ -31,9 +48,11 @@ We're going to use npm (Node Package Manager) to add JavaScript libraries and Ty
 2. Type "npm" into the search bar and select **npm Configuration File**. Use the default name (package.json) and create the file.
 3. Right click on your project file again and choose Open Folder in File Explorer.
 4. Shift+right click in the background of the File Explorer window and choose **Open command window here**.
-5. Run the following command:
+5. Run the following commands:
 
-`npm install --save react react-dom @types/react @types/react-dom`
+`npm install --save react react-dom`
+
+`npm install --save-dev @types/react @types/react-dom`
 
 Now we have the necessary libraries and type definitions installed, and they're saved as dependencies in `package.json`. If someone grabs this project in the future, they can run just `npm install` and fetch the dependencies specified in `package.json`.
 
@@ -282,7 +301,7 @@ toggleCompleted = (index: number) => {
 ```
 - Attach the handler when creating `<li>` elements using the optional second parameter to the `map` callback function:
 ```JSX
-this.items.map((item, idx) => <li onClick={() => toggleCompleted(index)});
+this.state.items.map((item, i) => <li onClick={() => this.toggleCompleted(i)}>/* name and check */</li>)
 ```
 
 ## Growing complexity
