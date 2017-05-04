@@ -22,15 +22,21 @@ Using TypeScript, we can develop and modify our apps more productively: when we 
 ## Setting up your React/TypeScript project
 We're going to create a simple to-do list app using React. Begin by opening Visual Studio and creating a new project. Search for "TypeScript" in the **Search Installed Templates** box and select the **HTML Application with TypeScript** project type. Name it something like ToDoList and create the project.
 
-We want to modify this project so we can serve the TypeScript files we create! Add the following in web.config file:
+We want to modify this project so we can serve the TypeScript files we create to the browser! Add the following in your web.config file:
 
 ```xml
+<configuration>
   <system.webServer>
     <staticContent>
       <remove fileExtension=".tsx" />
       <mimeMap fileExtension=".tsx" mimeType="application/javascript" />
     </staticContent>
   </system.webServer>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+  </system.web>
+</configuration>
   ```
 
 If you open `app.ts` in the Solution Explorer, you'll find a Greeter component that shows off some of the basic language features. If you hit the green play button, the app should start up and open a page in your browser with a ticking timestamp. Hit Stop when you're done looking at it.
