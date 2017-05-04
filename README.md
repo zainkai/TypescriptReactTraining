@@ -31,9 +31,10 @@ We're going to use npm (Node Package Manager) to add JavaScript libraries and Ty
 2. Type "npm" into the search bar and select **npm Configuration File**. Use the default name (package.json) and create the file.
 3. Right click on your project file again and choose Open Folder in File Explorer.
 4. Shift+right click in the background of the File Explorer window and choose **Open command window here**.
-5. Run the following command:
+5. Run the following commands:
 
-`npm install --save react react-dom @types/react @types/react-dom`
+`npm install --save react react-dom`
+`npm install --saveDev @types/react @types/react-dom`
 
 Now we have the necessary libraries and type definitions installed, and they're saved as dependencies in `package.json`. If someone grabs this project in the future, they can run just `npm install` and fetch the dependencies specified in `package.json`.
 
