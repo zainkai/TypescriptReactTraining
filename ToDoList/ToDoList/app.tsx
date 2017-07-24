@@ -18,7 +18,7 @@ class ToDoList extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            items: [{ name: "Milk",done:false }, { name: "Eggs",done:true }, { name:"Bread",done:false}],
+            items: [{ name: "Milk", done: false }, { name: "Eggs", done: true }, { name: "Bread", done: false }, { name: "Beer", done: false }, { name: "Butter", done: false }],
             newItemName: ""
         };
     }
